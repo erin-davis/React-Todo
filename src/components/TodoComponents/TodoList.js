@@ -6,12 +6,13 @@ import React from "react";
 import Todo from "./Todo.js";
 
 const TodoList = props => {
-  console.log(props.todo)
+  console.log("from TodoList", props.todo);
+  //23:25 explained in the video props.todo.map
   return(
     <div className="todo-list">
-      {/*todo.map(todo =>{
-        return <Todo todo={todo} key={todo.id}/>
-      })*/
+      {props.todo.map((item)=>{
+        return <Todo todo={props.todo} key={props.todo.id}/>
+      })
       }
     </div>
   )
