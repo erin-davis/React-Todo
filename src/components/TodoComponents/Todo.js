@@ -3,8 +3,10 @@ import React from "react";
 
 const Todo = (props) =>{
   return(
-    <div className="tasks">
-      {props.todo.name}
+    <div className="todo-item">
+      {props.todo.map((toDoItem)=>{
+        return `${toDoItem.title}`
+      })}
     </div>
   )
 }
