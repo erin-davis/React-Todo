@@ -12,7 +12,7 @@ const TodoList = props => {
     <div className="todo-list">
       {props.todo.map((item)=>{
     //    console.log("inside todoList.js 's .map()", props.todo);
-        return <Todo todo={props.todo} key={item.id}/>
+        return <Todo todo={item} key={item.id}/>
       })
       }
     </div>

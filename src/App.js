@@ -27,9 +27,9 @@ class App extends Component {
       completed: false
     };
     this.setState({
-      todo: [...this.state.todo, newTodo]
+      todo: [... this.state.todo, newTodo]
     });
-    console.log("from addTodo", this.todo)
+    console.log("from addTodo", this.state.todo)
   };
 
   // design `App` to be the parent component of your application.
