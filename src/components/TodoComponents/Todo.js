@@ -2,9 +2,10 @@
 import React from "react";
 
 const Todo = (props) =>{
-  console.log("inside todo.js", props.todo.title);
   return(
-    <div className="todo-item">
+    <div className={`todo${props.todo.completed ? "-complete" : "-incomplete"}`}
+    onClick={(e) => props.toggleTodo(props.todo)}
+    >
       {/*props.todo.map((toDoItem, index)=>{
        return `${props.toDoItem[index].title}`
       console.log("inside the .map of todo.js", props.todo[index].title);

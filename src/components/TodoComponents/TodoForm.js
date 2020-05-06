@@ -27,7 +27,7 @@ class TodoForm extends Component {
           id="formInput"
           type="text"
           name="todoText"
-          value={this.todoText}
+          value={this.state.todoText}
           placeholder="What should I do?"
           onChange={this.changeHandler}
         />

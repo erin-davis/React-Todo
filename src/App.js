@@ -4,6 +4,8 @@ import TodoForm from "./components/TodoComponents/TodoForm.js";
 import TodoList from "./components/TodoComponents/TodoList.js";
 import Todo from "./components/TodoComponents/Todo.js"
 
+import "./App.css"
+
 class App extends Component {
   // you will need a place to store your state in this component.
   constructor(){
@@ -12,13 +14,28 @@ class App extends Component {
       name: "Erin",
       todo: [
         {
-        title: "play animal crossing",
+        title: "",
         id: Date.now(),
         completed: true
       }
     ]
     }
   }
+
+  toggleTodo = todoId => {
+    console.log(`${todoId.title} has been toggled`);
+    this.setState({
+      todo: this.state.todo.map(item =>{
+        if(todoId.id === item.id){
+          return {
+            ...item,
+            completed: !item.completed
+          };
+        }
+        return item;
+      })
+    });
+  };
 
   addTodo = todoText =>{
     const newTodo = {
@@ -29,7 +46,6 @@ class App extends Component {
     this.setState({
       todo: [... this.state.todo, newTodo]
     });
-    console.log("from addTodo", this.state.todo)
   };
 
   // design `App` to be the parent component of your application.
@@ -39,9 +55,11 @@ class App extends Component {
       <div className="App">
         <div className="header">
           <h2>Welcome to {this.state.name}'s Todo App!</h2>
+          <h3>There are currently {this.state.todo.length - 1} available tasks</h3>
           <div className="todo-list">
             <TodoList
               todo={this.state.todo}
+              toggleTodo={this.toggleTodo}
             />
           </div>
           <TodoForm
