@@ -56,14 +56,17 @@ class App extends Component {
         <div className="header">
           <h2>Welcome to {this.state.name}'s Todo App!</h2>
           <h3>There are currently {this.state.todo.length - 1} available tasks</h3>
-          <div className="todo-list">
-            <TodoList
-              todo={this.state.todo}
-              toggleTodo={this.toggleTodo}
-            />
-          </div>
+        </div>
+        <div className="todo-list">
+          <TodoList
+            todo={this.state.todo}
+            toggleTodo={this.toggleTodo}
+          />
+        </div>
+        <div className="todo-form">
           <TodoForm
             addTodo={this.addTodo}
+            todo={this.state.todo}
            />
         </div>
       </div>

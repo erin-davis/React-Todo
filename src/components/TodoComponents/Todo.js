@@ -3,7 +3,7 @@ import React from "react";
 
 const Todo = (props) =>{
   return(
-    <div className={`todo${props.todo.completed ? "-complete" : "-incomplete"}`}
+    <div className={`tasks todo${props.todo.completed ? "-complete" : "-incomplete"}`}
     onClick={(e) => props.toggleTodo(props.todo)}
     >
       {/*props.todo.map((toDoItem, index)=>{

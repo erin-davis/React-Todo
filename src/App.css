@@ -2,5 +2,28 @@
   color: hotpink;
 }
 .todo-complete{
-  color: blue;
+  color: gray;
+  text-decoration: line-through;
+}
+.tasks{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+}
+.App{
+  display: flex;
+  border: 2px solid yellow;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 10%;
+  padding: 10px 5%;
+}
+.App .header{
+
+}
+h2{
+  font-size: 2.5rem;
+}
+h3{
+  font-size: 1.9rem;
+  color: lightslategray;
 }
